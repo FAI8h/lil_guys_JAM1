@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://l3xf1wyl71f4"]
+
+[ext_resource type="FontFile" uid="uid://ctfhbo6w2kc22" path="res://assets/fonts/Happy Chicken.ttf" id="1_3k6wv"]
+
+[resource]
+default_font = ExtResource("1_3k6wv")
+Label/colors/font_color = Color(0.89453125, 0.75754523, 0.22013855, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 4
+Label/constants/shadow_offset_x = 2
+Label/constants/shadow_offset_y = 2
+Label/constants/shadow_outline_size = 1

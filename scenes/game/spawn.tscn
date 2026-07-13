@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b3k2otqi5cui4"]
+
+[node name="Spawn" type="Marker2D" unique_id=1128879592 groups=["Spawn"]]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1075103460]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8359375, 0.11755371, 0.7742014, 1)

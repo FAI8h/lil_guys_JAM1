@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d065e3x3qk6i"]
+
+[ext_resource type="PackedScene" uid="uid://vg4qolkmmmek" path="res://scenes/game/levels.tscn" id="1_x1dlf"]
+[ext_resource type="Script" uid="uid://b2p7nep1ctk7h" path="res://scripts/game/spawn_manager.gd" id="2_1dopo"]
+[ext_resource type="Script" uid="uid://b6m87ns88bvs6" path="res://scripts/game/scene_manager.gd" id="3_1dopo"]
+[ext_resource type="Script" uid="uid://cx1shkhh350yk" path="res://scripts/game/game_manager.gd" id="3_60nf8"]
+[ext_resource type="PackedScene" uid="uid://b1p8w6nxuv26t" path="res://scenes/game/hud.tscn" id="4_5livc"]
+
+[node name="GameWorld" type="Node2D" unique_id=1272504983]
+
+[node name="Managers" type="Node" parent="." unique_id=990333646 groups=["Managers"]]
+
+[node name="GameManager" type="Node" parent="Managers" unique_id=1246112097]
+script = ExtResource("3_60nf8")
+
+[node name="SceneManager" type="Node" parent="Managers" unique_id=1914802289 node_paths=PackedStringArray("levels_node", "spawn_manager")]
+script = ExtResource("3_1dopo")
+levels_node = NodePath("../../Levels")
+spawn_manager = NodePath("../SpawnManager")
+
+[node name="SpawnManager" type="Node2D" parent="Managers" unique_id=1766391979]
+script = ExtResource("2_1dopo")
+
+[node name="Levels" parent="." unique_id=625065895 groups=["Levels"] instance=ExtResource("1_x1dlf")]
+
+[node name="Units" type="Node2D" parent="." unique_id=1777375160 groups=["Units"]]
+
+[node name="Objects" type="Node2D" parent="." unique_id=1364783593 groups=["Objects"]]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1755873656]
+
+[node name="HUD" parent="UI" unique_id=1754857177 instance=ExtResource("4_5livc")]

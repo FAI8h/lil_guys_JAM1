@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LevelDate" format=3 uid="uid://clopvmps4rr67"]
+
+[ext_resource type="Script" uid="uid://8726qtjg672o" path="res://scripts/game/placeable_allowance.gd" id="1_xhqb4"]
+[ext_resource type="Resource" uid="uid://csjhflqtqinfb" path="res://assets/resources/arrow.tres" id="2_pja2w"]
+[ext_resource type="Script" uid="uid://4107dwnxwxmq" path="res://scripts/game/level_data.gd" id="3_rs680"]
+
+[sub_resource type="Resource" id="Resource_evuc2"]
+script = ExtResource("1_xhqb4")
+item = ExtResource("2_pja2w")
+max_arrow = 3
+metadata/_custom_type_script = "uid://8726qtjg672o"
+
+[resource]
+script = ExtResource("3_rs680")
+placeablea_allowance = Array[ExtResource("1_xhqb4")]([SubResource("Resource_evuc2")])
+metadata/_custom_type_script = "uid://4107dwnxwxmq"

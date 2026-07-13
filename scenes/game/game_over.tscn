@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://blawfxf3e1jv2"]
+
+[ext_resource type="Theme" uid="uid://8i3ous0ugfgy" path="res://assets/resources/game_over.tres" id="1_hfhxj"]
+
+[node name="GameOver" type="Control" unique_id=311656308]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1217200119]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hfhxj")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1827810005]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.5
+offset_top = 133.0
+offset_right = 169.5
+offset_bottom = 232.0
+grow_horizontal = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=414988026]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = 64.32999
+offset_right = 155.0
+offset_bottom = 246.33008
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=1848297558]
+layout_mode = 2
+text = "RESTART"
+
+[node name="MainMenu" type="Button" parent="Panel/VBoxContainer" unique_id=1726226571]
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=1947955794]
+layout_mode = 2
+text = "QUIT"

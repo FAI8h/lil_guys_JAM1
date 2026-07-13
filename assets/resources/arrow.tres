@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlaceableItem" format=3 uid="uid://csjhflqtqinfb"]
+
+[ext_resource type="Texture2D" uid="uid://1i5j7bjb7vnx" path="res://assets/sprites/arrow.png" id="1_nfvns"]
+[ext_resource type="PackedScene" uid="uid://creyqvv8frn4i" path="res://scenes/game/arrow.tscn" id="2_fkm7x"]
+[ext_resource type="Script" uid="uid://cvbp3a4tn1dex" path="res://scripts/game/placeable_item.gd" id="3_pte5c"]
+
+[resource]
+script = ExtResource("3_pte5c")
+scene = ExtResource("2_fkm7x")
+display_name = "Arrow"
+max_count = 3
+icon = ExtResource("1_nfvns")
+metadata/_custom_type_script = "uid://cvbp3a4tn1dex"

@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://b1p8w6nxuv26t"]
+
+[ext_resource type="Script" uid="uid://k6s8skkdanh4" path="res://scripts/UI/hud.gd" id="1_77e6q"]
+[ext_resource type="Theme" uid="uid://l3xf1wyl71f4" path="res://assets/resources/hud_panel.tres" id="2_3k67c"]
+[ext_resource type="Script" uid="uid://cyg6151sesgov" path="res://scripts/UI/texture_rect.gd" id="2_8m1vl"]
+[ext_resource type="Texture2D" uid="uid://1i5j7bjb7vnx" path="res://assets/sprites/arrow.png" id="2_xu0sl"]
+[ext_resource type="Resource" uid="uid://csjhflqtqinfb" path="res://assets/resources/arrow.tres" id="4_xu0sl"]
+[ext_resource type="Texture2D" uid="uid://bolurpxtflsfk" path="res://assets/sprites/little_guys_2.png" id="6_3k67c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd67q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m1vl"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.89411765, 0.75686276, 0.21960784, 0.56078434)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
+
+[node name="HUD" type="Control" unique_id=1754857177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_77e6q")
+
+[node name="Panel" type="Panel" parent="." unique_id=1469684521]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_3k67c")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rd67q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=2121919010]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -492.815
+offset_top = -183.0
+offset_right = -90.81494
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=1716661318]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1237142645]
+layout_mode = 2
+text = "Arrow : ( 3/5 )"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1114202808]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8m1vl")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer/Panel" unique_id=2023940236]
+self_modulate = Color(0.8359375, 0.664505, 0.15020752, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -16.0
+offset_right = 64.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("2_xu0sl")
+stretch_mode = 3
+flip_h = true
+script = ExtResource("2_8m1vl")
+item = ExtResource("4_xu0sl")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=424712203]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer2" unique_id=147620659]
+layout_mode = 2
+text = "Wall : ( 2/ 3 )"
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/VBoxContainer2" unique_id=556216574]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer2/Panel" unique_id=2125973856]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_3k67c")
+stretch_mode = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=1238092874]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer3" unique_id=34077575]
+layout_mode = 2
+text = "zoom : ( 2/ 3 )"
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/VBoxContainer3" unique_id=136129088]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer3/Panel" unique_id=1718018257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_3k67c")
+stretch_mode = 3
+
+[connection signal="gui_input" from="Panel/HBoxContainer/VBoxContainer/Panel/TextureRect" to="Panel/HBoxContainer/VBoxContainer/Panel/TextureRect" method="_on_gui_input"]
