@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://blawfxf3e1jv2"]
 
+[ext_resource type="Script" uid="uid://bq0ikohxdvgrf" path="res://scripts/UI/game_over.gd" id="1_er7gy"]
 [ext_resource type="Theme" uid="uid://8i3ous0ugfgy" path="res://assets/resources/game_over.tres" id="1_hfhxj"]
 
 [node name="GameOver" type="Control" unique_id=311656308]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_er7gy")
 
 [node name="Panel" type="Panel" parent="." unique_id=1217200119]
 layout_mode = 1
@@ -60,3 +62,6 @@ text = "MAIN MENU"
 [node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=1947955794]
 layout_mode = 2
 text = "QUIT"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

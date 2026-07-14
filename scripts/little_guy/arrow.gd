@@ -3,11 +3,20 @@ extends Area2D
 enum Direction  {UP, RIGHT, DOWN, LEFT}
 @export var choose_dir : Direction = Direction.UP
 
+@export var boost_chance : float = 0.5
+@export var boost_multiplier : float = 1.5
+var is_boost : bool = false
+
 var pointing_dir : Vector2
 var is_selected : bool = false
 
 func _ready() -> void:
 	_set_dir_rotation()
+
+func rool_boost() -> void:
+	is_boost = randf() < boost_chance
+	if is_boost:
+		modulate = Color(1.0, 0.8, 0.2)
 
 
 func _set_dir_rotation() -> void:
@@ -40,10 +49,11 @@ func rotate_left() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is LittleGuy:
-		print("player")
 		print(self.rotation)
 		if body.has_method("change_dir"):
 			body.change_dir(pointing_dir)
+		if body.has_method("apply_boost"):
+			body.apply_boost(boost_multiplier)
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -53,4 +63,11 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 func set_selected(value: bool) -> void:
 	is_selected = value
-	modulate = Color.GREEN if is_selected else Color.GRAY
+	if is_selected:
+		modulate = Color.GREEN
+	else:
+		if is_boost:
+			modulate = Color(1.0, 0.8, 0.2)
+		else:
+			modulate = Color.WHITE
+

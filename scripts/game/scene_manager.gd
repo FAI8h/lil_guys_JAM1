@@ -5,6 +5,8 @@ extends Node
 @export var levels_node : Node2D
 @export var spawn_manager : SpawnManager
 
+@export var transition : CanvasLayer
+
 var current_level : Node2D
 var current_level_id : int
 

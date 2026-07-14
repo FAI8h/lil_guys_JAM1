@@ -15,3 +15,11 @@ func _on_settings_pressed() -> void:
 
 func _on_back_pressed() -> void:
     _ready()
+
+
+func _on_full_screen_toggled(toggled_on: bool) -> void:
+    if toggled_on == true:
+        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+    else:
+        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+

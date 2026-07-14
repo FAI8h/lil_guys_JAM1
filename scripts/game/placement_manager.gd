@@ -49,6 +49,11 @@ func confirm_placing() -> void:
 		ghost_instance.collision_layer = 2
 		ghost_instance.collision_mask = 1
 		ghost_instance.input_pickable = true
+
+	if ghost_instance.has_method("rool_boost"):
+		print("rolling boost")
+		ghost_instance.rool_boost()
+
 	remaining_counts[current_item] -= 1
 	count_changed.emit(current_item, remaining_counts[current_item])
 	is_placing = false

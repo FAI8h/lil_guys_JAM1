@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://u30m1ofrrncg"]
+
+[ext_resource type="Script" uid="uid://bwnwbaj7sym2e" path="res://scripts/UI/level_transition.gd" id="1_i35jc"]
+
+[node name="LevelTransition" type="CanvasLayer" unique_id=1795821401]
+script = ExtResource("1_i35jc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1343299101]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
