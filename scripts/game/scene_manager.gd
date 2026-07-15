@@ -14,9 +14,6 @@ var current_level_id : int
 const GAME_OVER_SCENE : String = "res://scenes/game/game_over.tscn"
 const PAUSE_MENU : String = "res://scenes/game/pause_menu.tscn"
 
-func _ready() -> void:
-	EventBus.pause_changed.connect(_on_pause_change)
-
 
 const LEVELS = {
 	1: "res://scenes/game/lvl_1.tscn",
@@ -96,15 +93,6 @@ func restart_level() -> void:
 func _on_game_over(_won : bool) -> void:
 	await Transition.fade_out()
 
-func _on_pause_change(pause : bool) -> void:
-	if pause:
-		await Transition.fade_out()
-		get_tree().paused = true
-		get_tree().change_scene_to_file(PAUSE_MENU)
-		Transition.fade_in()
-	else:
-		await Transition.fade_out()
-		get_tree().paused = false
-		Transition.fade_in()
+
 	
 		

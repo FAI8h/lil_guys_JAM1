@@ -79,6 +79,7 @@ expand_margin_left = 1.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7q3k2"]
 
 [node name="MainMenu" type="Control" unique_id=1966559734]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,16 +128,19 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 
 [node name="Start" type="Button" parent="MainButtons/VBoxContainer" unique_id=405378054]
+process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 text = "START"
 
 [node name="Settings" type="Button" parent="MainButtons/VBoxContainer" unique_id=1676445697]
+process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 text = "SETTINGS"
 
 [node name="Exit" type="Button" parent="MainButtons/VBoxContainer" unique_id=424101934]
+process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 text = "EXIT"
