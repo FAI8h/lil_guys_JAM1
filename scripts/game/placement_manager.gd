@@ -7,6 +7,13 @@ var max_counts : Dictionary = {}
 var is_placing : bool = false
 var current_item : PlaceableItem = null
 var ghost_instance : Node2D = null
+var current_boost_chance : float 
+var current_boost_multiplier : float 
+var is_paused : bool = false
+
+func _ready() -> void:
+	EventBus.pause_changed.connect(func(p): is_paused = p)
+
 
 func register_item(item : PlaceableItem, max_count : int) -> void:
 	max_counts[item] = max_count
@@ -18,9 +25,14 @@ func get_remaining(item : PlaceableItem) -> int:
 func get_max(item : PlaceableItem) -> int:
 	return max_counts.get(item,0)
 
+func set_level_boost_stats(chance : float, multiplier : float) ->void:
+	current_boost_multiplier = multiplier
+	current_boost_chance = chance
+
 
 func start_placing(item : PlaceableItem) -> void:
-	print("start_placing called, remaining: ", get_remaining(item))
+	if is_paused:
+		return
 	if get_remaining(item) <= 0:
 		return
 	is_placing = true
@@ -49,9 +61,10 @@ func confirm_placing() -> void:
 		ghost_instance.collision_layer = 2
 		ghost_instance.collision_mask = 1
 		ghost_instance.input_pickable = true
+	if ghost_instance.has_method("set_boost_value"):
+		ghost_instance.set_boost_value(current_boost_chance, current_boost_multiplier)
 
 	if ghost_instance.has_method("rool_boost"):
-		print("rolling boost")
 		ghost_instance.rool_boost()
 
 	remaining_counts[current_item] -= 1

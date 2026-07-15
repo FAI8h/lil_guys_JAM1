@@ -14,4 +14,7 @@ metadata/_custom_type_script = "uid://8726qtjg672o"
 script = ExtResource("1_ui08l")
 max_unit_spawn = 5
 placeablea_allowance = Array[ExtResource("1_s6n61")]([SubResource("Resource_qsy4q")])
+time_limit = 20.0
+boost_multiplier = 3.0
+boost_chance = 0.5
 metadata/_custom_type_script = "uid://4107dwnxwxmq"

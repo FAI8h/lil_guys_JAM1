@@ -12,5 +12,6 @@ metadata/_custom_type_script = "uid://8726qtjg672o"
 
 [resource]
 script = ExtResource("3_rs680")
+boost_chance = 0.7
 placeablea_allowance = Array[ExtResource("1_xhqb4")]([SubResource("Resource_evuc2")])
 metadata/_custom_type_script = "uid://4107dwnxwxmq"

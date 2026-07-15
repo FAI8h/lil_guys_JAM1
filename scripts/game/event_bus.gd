@@ -4,6 +4,11 @@ signal level_configured
 signal lil_died(reason: String)
 signal level_completed
 signal max_unit(unit : int)
+signal pause_changed(pause : bool)
+
+signal level_time_up
+signal time_updated(seconds : float)
+signal level_stats(chance : float, multiplier : float)
 
 var selected_arrow : Area2D
 

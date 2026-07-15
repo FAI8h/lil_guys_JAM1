@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ddjcnbcm7jbta"]
+
+[ext_resource type="AudioStream" uid="uid://c2g7gaipx31at" path="res://assets/sounds/freesound_community-gamemusic-6082.mp3" id="1_g8j6g"]
+
+[node name="AudioManager" type="Node" unique_id=1462012020]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1755181077]
+stream = ExtResource("1_g8j6g")
+autoplay = true
+bus = &"Music"
+playback_type = 1
+parameters/looping = true

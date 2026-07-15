@@ -42,6 +42,19 @@ mouse_filter = 2
 theme = ExtResource("2_3k67c")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rd67q")
 
+[node name="Label" type="Label" parent="Panel" unique_id=1578718657]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.5
+offset_top = 44.0
+offset_right = -108.5
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+text = "time left  :  10.0s"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=2121919010]
 layout_mode = 1
 anchors_preset = 7

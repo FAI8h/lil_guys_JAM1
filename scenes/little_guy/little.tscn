@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bolurpxtflsfk" path="res://assets/sprites/little_guys_2.png" id="1_xm2sl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsy4q"]
-radius = 4.0
+radius = 8.0
 
 [node name="Little" type="CharacterBody2D" unique_id=1088279221 groups=["Lil"]]
 collision_mask = 2
@@ -18,6 +18,7 @@ texture = ExtResource("1_xm2sl")
 shape = SubResource("CircleShape2D_qsy4q")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=970296298]
+visible = false
 position = Vector2(14, 13)
 rect = Rect2(-14, -10, 1152, 648)
 

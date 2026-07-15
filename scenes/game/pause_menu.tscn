@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bl6x6fs80hevx"]
+
+[ext_resource type="Script" uid="uid://c3povpmtcd3c5" path="res://scripts/UI/pause_menu.gd" id="1_aj248"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61cmk"]
+bg_color = Color(0, 0.23921569, 0.3019608, 1)
+border_width_bottom = 8
+border_color = Color(0, 0.09411765, 0.12156863, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj248"]
+bg_color = Color(0, 0.23921569, 0.3019608, 1)
+border_width_bottom = 8
+border_color = Color(0, 0.0959314, 0.12109375, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8vbq"]
+bg_color = Color(0, 0.23921569, 0.3019608, 1)
+border_width_top = 8
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Theme" id="Theme_qsy4q"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = null
+Button/styles/hover = SubResource("StyleBoxFlat_61cmk")
+Button/styles/normal = SubResource("StyleBoxFlat_aj248")
+Button/styles/pressed = SubResource("StyleBoxFlat_k8vbq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n058"]
+bg_color = Color(0.08235296, 0.13921571, 0.33333334, 1)
+skew = Vector2(18.86, -0.385)
+
+[node name="PauseMenu" type="Control" unique_id=1342712507]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aj248")
+
+[node name="Panel" type="Panel" parent="." unique_id=1894363221]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qsy4q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0n058")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=537614953]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.99997
+offset_top = 56.339996
+offset_right = 91.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=1563349755]
+layout_mode = 2
+size_flags_vertical = 3
+text = "RESUME"
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=1496022822]
+layout_mode = 2
+size_flags_vertical = 3
+text = "RESTART"
+
+[node name="MainMenu" type="Button" parent="Panel/VBoxContainer" unique_id=820062881]
+layout_mode = 2
+size_flags_vertical = 3
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

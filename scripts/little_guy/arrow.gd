@@ -3,15 +3,20 @@ extends Area2D
 enum Direction  {UP, RIGHT, DOWN, LEFT}
 @export var choose_dir : Direction = Direction.UP
 
-@export var boost_chance : float = 0.5
-@export var boost_multiplier : float = 1.5
+var boost_chance : float
+var boost_multiplier : float
 var is_boost : bool = false
 
 var pointing_dir : Vector2
 var is_selected : bool = false
 
 func _ready() -> void:
+	EventBus.level_stats.connect(set_boost_value)
 	_set_dir_rotation()
+
+func set_boost_value(chance : float = 0.2, multiplier : float = 1.5) ->void:
+	boost_chance = chance
+	boost_multiplier = multiplier
 
 func rool_boost() -> void:
 	is_boost = randf() < boost_chance
@@ -52,7 +57,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print(self.rotation)
 		if body.has_method("change_dir"):
 			body.change_dir(pointing_dir)
-		if body.has_method("apply_boost"):
+		if is_boost and body.has_method("apply_boost"):
 			body.apply_boost(boost_multiplier)
 
 
