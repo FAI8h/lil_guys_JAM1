@@ -5,6 +5,8 @@ var is_paused : bool
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	visible = false
+	position.x = 0
+	position.y = 0
 	EventBus.pause_changed.connect(_on_pause_changed)
 
 func _on_pause_changed(paused: bool) -> void:
