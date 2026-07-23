@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bl6x6fs80hevx"]
 
 [ext_resource type="Script" uid="uid://c3povpmtcd3c5" path="res://scripts/UI/pause_menu.gd" id="1_aj248"]
+[ext_resource type="FontFile" uid="uid://ctfhbo6w2kc22" path="res://assets/fonts/Happy Chicken.ttf" id="2_k8vbq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61cmk"]
 bg_color = Color(0, 0.23921569, 0.3019608, 1)
@@ -38,6 +39,15 @@ Button/fonts/font = null
 Button/styles/hover = SubResource("StyleBoxFlat_61cmk")
 Button/styles/normal = SubResource("StyleBoxFlat_aj248")
 Button/styles/pressed = SubResource("StyleBoxFlat_k8vbq")
+Label/colors/font_color = Color(0, 0.23921569, 0.3019608, 1)
+Label/colors/font_outline_color = Color(0.654902, 0.72156864, 0.6901961, 1)
+Label/colors/font_shadow_color = Color(0, 0.09411765, 0.12156863, 1)
+Label/constants/outline_size = 8
+Label/constants/shadow_offset_x = 4
+Label/constants/shadow_offset_y = 3
+Label/constants/shadow_outline_size = 27
+Label/font_sizes/font_size = 43
+Label/fonts/font = ExtResource("2_k8vbq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n058"]
 bg_color = Color(0.08235296, 0.13921571, 0.33333334, 1)
@@ -92,6 +102,21 @@ text = "RESTART"
 layout_mode = 2
 size_flags_vertical = 3
 text = "MAIN MENU"
+
+[node name="Label" type="Label" parent="Panel" unique_id=1401873338]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -120.0
+offset_right = 31.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSED"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

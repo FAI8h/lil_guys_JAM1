@@ -1,29 +1,21 @@
 [gd_scene format=3 uid="uid://blw2qeln2m1hr"]
 
 [ext_resource type="Script" uid="uid://cg0vj1o4a4h8p" path="res://scripts/game/exit.gd" id="1_bb8d3"]
+[ext_resource type="Texture2D" uid="uid://cbarkh52vbkp2" path="res://assets/sprites/exit_door.png" id="2_wndlv"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xmstb"]
-radius = 19.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ay7fa"]
+radius = 18.0
+height = 54.0
 
 [node name="Exit" type="Area2D" unique_id=344729690 groups=["Exit"]]
 collision_layer = 8
 script = ExtResource("1_bb8d3")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1440607166]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.43590927, 0.89453125, 0.055908203, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=666432280]
+scale = Vector2(2, 2)
+texture = ExtResource("2_wndlv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=742345188]
-shape = SubResource("CircleShape2D_xmstb")
+shape = SubResource("CapsuleShape2D_ay7fa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

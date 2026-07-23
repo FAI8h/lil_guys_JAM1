@@ -51,7 +51,7 @@ grow_vertical = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=1848297558]
+[node name="Retry" type="Button" parent="Panel/VBoxContainer" unique_id=1848297558]
 process_mode = 3
 layout_mode = 2
 text = "RETRY"
@@ -64,5 +64,6 @@ text = "MAIN MENU"
 layout_mode = 2
 text = "QUIT"
 
-[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

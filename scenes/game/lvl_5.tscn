@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://uxbowalk5yyq"]
+
+[ext_resource type="PackedScene" uid="uid://b6njs55m7itn" path="res://scenes/game/death.tscn" id="1_nsvbd"]
+[ext_resource type="Script" uid="uid://odk12bqq4tuo" path="res://scripts/game/lvl_5.gd" id="1_vx6bf"]
+[ext_resource type="PackedScene" uid="uid://blw2qeln2m1hr" path="res://scenes/game/exit.tscn" id="2_satbh"]
+[ext_resource type="Resource" uid="uid://drekyek0methb" path="res://assets/resources/lvl_5.tres" id="2_uep2r"]
+[ext_resource type="PackedScene" uid="uid://b3k2otqi5cui4" path="res://scenes/game/spawn.tscn" id="3_uep2r"]
+
+[node name="lvl_5" type="Node2D" unique_id=711489291]
+script = ExtResource("1_vx6bf")
+level_data = ExtResource("2_uep2r")
+
+[node name="Death" parent="." unique_id=1326901333 instance=ExtResource("1_nsvbd")]
+position = Vector2(578, 614)
+
+[node name="Exit" parent="." unique_id=344729690 instance=ExtResource("2_satbh")]
+position = Vector2(1125, 33)
+scale = Vector2(-1, 1)
+
+[node name="Spawn" parent="." unique_id=1128879592 instance=ExtResource("3_uep2r")]
+position = Vector2(229, 613)
