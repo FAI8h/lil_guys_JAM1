@@ -3,7 +3,7 @@ class_name GameManager
 
 @onready var managers := get_parent()
 @onready var scene_manager := managers.get_node("SceneManager")
-
+@onready var spawn_manager := managers.get_node("SpawnManager")
 @onready var level_timer : Timer = $LevelTimer
 #dev only
 @export var skip_to_lvl : int = 1
@@ -35,6 +35,7 @@ func stop_level_timer() -> void:
 	level_timer.stop()
 
 func _on_level_timer_timeout() -> void:
+	_stop_game()
 	EventBus.level_time_up.emit()
 
 func _start_game()-> void:
@@ -42,6 +43,12 @@ func _start_game()-> void:
 		scene_manager.load_level(1)
 	else:
 		scene_manager.load_level(skip_to_lvl)
+
+func _stop_game() -> void:
+	stop_level_timer()
+	spawn_manager.stop_spawning()
+
+
 
 
 func update_level() -> void:

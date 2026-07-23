@@ -3,6 +3,7 @@ extends Node
 signal level_configured
 signal lil_died(reason: String)
 signal level_completed
+signal level_failed
 signal max_unit(unit : int)
 signal pause_changed(pause : bool)
 

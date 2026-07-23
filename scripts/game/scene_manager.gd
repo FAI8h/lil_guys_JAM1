@@ -20,6 +20,7 @@ const LEVELS = {
 	2: "res://scenes/game/lvl_2.tscn",
 	3: "res://scenes/game/lvl_3.tscn",
 	4: "res://scenes/game/lvl_4.tscn",
+	5: "res://scenes/game/lvl_5.tscn",
 }
 
 const LEVEL_DATA = {
@@ -27,6 +28,7 @@ const LEVEL_DATA = {
 	2: "res://assets/resources/lvl_2.tres",
 	3: "res://assets/resources/lvl_3.tres",
 	4: "res://assets/resources/lvl_4.tres",
+	5: "res://assets/resources/lvl_5.tres",
 }
 
 func load_level(id : int) -> void:
@@ -90,8 +92,10 @@ func restart_level() -> void:
 		return
 	load_level(current_level_id)
 
-func _on_game_over(_won : bool) -> void:
+func on_level_failed() -> void:
 	await Transition.fade_out()
+	
+	
 
 
 	
