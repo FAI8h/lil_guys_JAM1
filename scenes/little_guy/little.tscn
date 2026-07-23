@@ -18,7 +18,6 @@ texture = ExtResource("1_xm2sl")
 shape = SubResource("CircleShape2D_qsy4q")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=970296298]
-visible = false
 position = Vector2(14, 13)
 rect = Rect2(-14, -10, 1152, 648)
 
