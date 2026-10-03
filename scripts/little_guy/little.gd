@@ -30,7 +30,7 @@ func change_dir(new_dir : Vector2) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	EventBus.lil_died.emit("Out of Arena")
+	EventBus.lil_died.emit("EXITED : Out of Arena")
 	die()
 
 
